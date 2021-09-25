@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap");
+:root {
+  --primary-color: #fefdff;
+  --border-radius: 5px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Stick No Bills", sans-serif;
+  background-color: black;
+  background-image: url("https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80");
+}
+
+h1 {
+  color: black;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  text-align: center;
+  width: 275px;
+  margin: 20px auto 10px;
+  user-select: none;
+}
+
+h1:hover {
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+/* Bookmarks */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.6);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 10px;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+a {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a:link,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.fa-times-circle {
+  float: right;
+  cursor: pointer;
+  z-index: 2;
+  color: black;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.name img {
+  height: 20px;
+  width: 20px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+/* Modal */
+.modal-container {
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.show-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-width: 95%;
+  width: 500px;
+  animation: modalopen 5s;
+}
+
+@keyframes modalopen {
+}
+
+/* media large smartphone */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
