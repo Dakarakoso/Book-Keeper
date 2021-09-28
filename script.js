@@ -6,6 +6,8 @@ const bookmarksContainer = document.getElementById("bookmarks-container");
 const websiteNameEl = document.getElementById("website-name");
 const websiteUrlEl = document.getElementById("website-url");
 
+let bookmarks = [];
+
 // show modal, focus on input
 function showModal() {
   modal.classList.add("show-modal");
@@ -39,6 +41,20 @@ function validateUrl(nameUrl, urlValue) {
   return true;
 }
 
+function fetchBookmarks() {
+  if (localStorage.getItem("bookmarks")) {
+    bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+  } else {
+    bookmarks = [
+      {
+        name: "Willian Negishi",
+        url: "https://www.linkedin.com/in/willian-negishi-2829a4172/",
+      },
+    ];
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  }
+}
+
 const storeBookmark = (e) => {
   e.preventDefault();
   const nameValue = websiteNameEl.value;
@@ -46,11 +62,23 @@ const storeBookmark = (e) => {
   if (!urlValue.includes("https://") && !urlValue.includes("http://")) {
     urlValue = `https://${urlValue}`;
   }
-  console.log(nameValue, urlValue);
+  //   console.log(nameValue, urlValue);
   if (!validateUrl(nameValue, urlValue)) {
     return false;
   }
+  const bookmark = {
+    name: nameValue,
+    url: urlValue,
+  };
+  bookmarks.push(bookmark);
+  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  fetchBookmarks();
+  bookmarkForm.reset();
+  websiteNameEl.focus();
 };
 
 // event listener
 bookmarkForm.addEventListener("submit", storeBookmark);
+
+// Onload
+fetchBookmarks();
