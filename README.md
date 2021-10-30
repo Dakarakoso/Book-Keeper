@@ -37,7 +37,7 @@ https://dakarakoso.github.io/Book-Keeper/
 
 ## About The Project
 
-In this project, the whole idea was to keep track of a selected time and countdown while displaying the value to the user. Then once it is finished counting, display when it finished counting.
+In this project, the main feature's idea is for users to keep their favorites wesite in one place. They can set the name and the website's url.
 
 ### Built With
 
