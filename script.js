@@ -87,7 +87,7 @@ function fetchBookmarks() {
     bookmarks = [
       {
         name: "Willian",
-        url: "https://www.linkedin.com/in/willian-negishi-2829a4172/",
+        url: "https://willianthedeveloper.netlify.app/",
       },
     ];
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
